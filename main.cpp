@@ -1,7 +1,6 @@
 #include <cstdio>
 #include <stack>
 #include <iostream>
-#include <string>
 
 using namespace std;
 
@@ -153,42 +152,42 @@ bool calc(int i,const string& a)
           if(nowSignal=='!')
           {
             numberStack.push(!nowNum1);
-            printf("\t%d\t",!nowNum1);
+            printf("%d\t\t",!nowNum1);
           }
           if(nowSignal=='&')
           {
             int nowNum2=numberStack.top();
             numberStack.pop();
             numberStack.push(nowNum1&nowNum2);
-            printf("\t%d\t",nowNum1&nowNum2);
+            printf("%d\t\t",nowNum1&nowNum2);
           }
           if(nowSignal=='|')
           {
             int nowNum2=numberStack.top();
             numberStack.pop();
             numberStack.push(nowNum1|nowNum2);
-            printf("\t%d\t",nowNum1|nowNum2);
+            printf("%d\t\t",nowNum1|nowNum2);
           }
           if(nowSignal=='^')
           {
             int nowNum2=numberStack.top();
             numberStack.pop();
             numberStack.push(nowNum1^nowNum2);
-            printf("\t%d\t",nowNum1^nowNum2);
+            printf("%d\t\t",nowNum1^nowNum2);
           }
           if(nowSignal=='>')
           {
             int nowNum2=numberStack.top();
             numberStack.pop();
             numberStack.push((!nowNum2)|nowNum1);
-            printf("\t%d\t",(!nowNum2)|nowNum1);
+            printf("%d\t\t",(!nowNum2)|nowNum1);
           }
           if(nowSignal=='=')
           {
             int nowNum2=numberStack.top();
             numberStack.pop();
             numberStack.push(nowNum1==nowNum2);
-            printf("\t%d\t",nowNum2==nowNum1);
+            printf("%d\t\t",nowNum2==nowNum1);
           }
         }
         signalStack.push(j);
@@ -209,42 +208,42 @@ bool calc(int i,const string& a)
           if (nowSignal == '!')
           {
             numberStack.push(!nowNum1);
-            printf("\t%d\t", !nowNum1);
+            printf("%d\t\t", !nowNum1);
           }
           if (nowSignal == '&')
           {
             int nowNum2 = numberStack.top();
             numberStack.pop();
             numberStack.push(nowNum1 & nowNum2);
-            printf("\t%d\t", nowNum1 & nowNum2);
+            printf("%d\t\t", nowNum1 & nowNum2);
           }
           if (nowSignal == '|')
           {
             int nowNum2 = numberStack.top();
             numberStack.pop();
             numberStack.push(nowNum1 | nowNum2);
-            printf("\t%d\t", nowNum1 | nowNum2);
+            printf("%d\t\t", nowNum1 | nowNum2);
           }
           if (nowSignal == '^')
           {
             int nowNum2 = numberStack.top();
             numberStack.pop();
             numberStack.push(nowNum1 ^ nowNum2);
-            printf("\t%d\t", nowNum1 ^ nowNum2);
+            printf("%d\t\t", nowNum1 ^ nowNum2);
           }
           if (nowSignal == '>')
           {
             int nowNum2 = numberStack.top();
             numberStack.pop();
             numberStack.push((!nowNum2) | nowNum1);
-            printf("\t%d\t", (!nowNum2) | nowNum1);
+            printf("%d\t\t", (!nowNum2) | nowNum1);
           }
           if (nowSignal == '=')
           {
             int nowNum2 = numberStack.top();
             numberStack.pop();
             numberStack.push(nowNum1 == nowNum2);
-            printf("\t%d\t", nowNum2 == nowNum1);
+            printf("%d\t\t", nowNum2 == nowNum1);
           }
         }
         signalStack.pop();
@@ -260,42 +259,42 @@ bool calc(int i,const string& a)
     if(nowSignal=='!')
     {
       numberStack.push(!nowNum1);
-      printf("\t%d\t",!nowNum1);
+      printf("%d\t\t",!nowNum1);
     }
     if(nowSignal=='&')
     {
       int nowNum2=numberStack.top();
       numberStack.pop();
       numberStack.push(nowNum1&nowNum2);
-      printf("\t%d\t",nowNum1&nowNum2);
+      printf("%d\t\t",nowNum1&nowNum2);
     }
     if(nowSignal=='|')
     {
       int nowNum2=numberStack.top();
       numberStack.pop();
       numberStack.push(nowNum1|nowNum2);
-      printf("\t%d\t",nowNum1|nowNum2);
+      printf("%d\t\t",nowNum1|nowNum2);
     }
     if(nowSignal=='^')
     {
       int nowNum2=numberStack.top();
       numberStack.pop();
       numberStack.push(nowNum1^nowNum2);
-      printf("\t%d\t",nowNum1^nowNum2);
+      printf("%d\t\t",nowNum1^nowNum2);
     }
     if(nowSignal=='>')
     {
       int nowNum2=numberStack.top();
       numberStack.pop();
       numberStack.push((!nowNum2)|nowNum1);
-      printf("\t%d\t",(!nowNum2)|nowNum1);
+      printf("%d\t\t",(!nowNum2)|nowNum1);
     }
     if(nowSignal=='=')
     {
       int nowNum2=numberStack.top();
       numberStack.pop();
       numberStack.push(nowNum1==nowNum2);
-      printf("\t%d\t",nowNum2==nowNum1);
+      printf("%d\t\t",nowNum2==nowNum1);
     }
   }
   return numberStack.top();
@@ -317,20 +316,20 @@ int main()
   cin>>str1;
   cout<<"Please enter the second formula:";
   cin>>str2;
-  for(int i=0;i<n;i++) printf("\t%c\t",'a'+i);
+  for(int i=0;i<n;i++) printf("%c\t\t",'a'+i);
   size=0;
   init(str1);
   for(int i=1;i<=size;i++)
   {
     ans1[++size1]=str1.substr(num[i].s,num[i].l-num[i].s+1);
-    cout<<"\tf1("<<i<<")\t";
+    cout<<"f1("<<i<<")\t";
   }
   size=0;
   init(str2);
   for(int i=1;i<=size;i++)
   {
     ans2[++size2]=str2.substr(num[i].s,num[i].l-num[i].s+1);
-    cout<<"\tf2("<<i<<")\t";
+    cout<<"f2("<<i<<")\t";
   }
   printf("\n");
   bool flag=false;
@@ -338,7 +337,7 @@ int main()
   {
     for(int j=1;j<=n;j++)
     {
-      printf("\t%d\t",gitbit(j-1,i));
+      printf("%d\t\t",gitbit(j-1,i));
     }
     if(calc(i,str1)!=calc(i,str2))
     {
@@ -346,8 +345,8 @@ int main()
     }
     printf("\n");
   }
-  if(flag) printf("Not equal!");
-  else printf("Equal!");
+  if(flag) printf("Not equal!\n");
+  else printf("Equal!\n");
   while(true)
   {
     int id,ip;
