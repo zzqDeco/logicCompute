@@ -15,7 +15,7 @@ struct subPair
 
 int size=0,size1=0,size2=0;
 
-bool gitbit(int n,int i)
+bool getBit(int n, int i)
 {
   return (i>>n)%2;
 }
@@ -137,7 +137,7 @@ bool calc(int i,const string& a)
   {
     if(j>='a'&&j<='z')
     {
-      numberStack.push(gitbit(j-'a',i));
+      numberStack.push(getBit(j - 'a', i));
     }
     else
     {
@@ -300,6 +300,10 @@ bool calc(int i,const string& a)
   return numberStack.top();
 }
 
+/*
+ * 主函数一大堆花里胡哨的格式化输入输出
+ */
+
 int main()
 {
   int n;
@@ -337,7 +341,7 @@ int main()
   {
     for(int j=1;j<=n;j++)
     {
-      printf("%d\t\t",gitbit(j-1,i));
+      printf("%d\t\t", getBit(j - 1, i));
     }
     if(calc(i,str1)!=calc(i,str2))
     {
@@ -350,7 +354,7 @@ int main()
   while(true)
   {
     int id,ip;
-    printf("Please choose the formula that you wanna see:(press \"i j\" to get fi(j) or press \"0 0\" to exit)");
+    printf(R"(Please choose the formula that you wanna see:(press "i j" to get fi(j) or press "0 0" to exit))");
     scanf("%d%d",&id,&ip);
     if(id==0&&ip==0) exit(0);
     if(id==1)
